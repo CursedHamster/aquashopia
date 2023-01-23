@@ -1,0 +1,118 @@
+.dropdown-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.dropdown-title p {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.dropdown-element {
+  padding: 1rem 0 2rem;
+}
+
+.dropdown-element.closed {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  animation: closeDropdown 0.3s ease-in-out;
+  -webkit-animation: closeDropdown 0.3s ease-in-out;
+}
+
+.dropdown-element.opened {
+  padding: 1rem 0 2rem;
+  opacity: 1;
+  animation: openDropdown 0.5s ease-in-out;
+  -webkit-animation: openDropdown 0.5s ease-in-out;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+@-webkit-keyframes openDropdown {
+  from {
+    max-height: 0;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    max-height: 30rem;
+    visibility: visible;
+    padding: 1rem 0 2rem;
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes openDropdown {
+  from {
+    max-height: 0;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    max-height: 30rem;
+    visibility: visible;
+    padding: 1rem 0 2rem;
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@-webkit-keyframes closeDropdown {
+  from {
+    height: calc(100% + 0rem);
+    visibility: visible;
+    padding: 1rem 0 2rem;
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+
+  to {
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+@keyframes closeDropdown {
+  from {
+    height: calc(100% + 0rem);
+    visibility: visible;
+    padding: 1rem 0 2rem;
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+
+  to {
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
+  }
+}

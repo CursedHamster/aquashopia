@@ -1,0 +1,423 @@
+.aquarium-container {
+  background: var(--background);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: var(--text-color);
+  position: relative;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.aquarium-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--primary);
+}
+
+.aquarium-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.aquarium-image-container {
+  cursor: pointer;
+  width: 25%;
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  gap: 0;
+}
+
+.aquarium-item-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(--background);
+  border: 2px solid var(--light-color);
+  translate: -1rem 0;
+  rotate: 5deg;
+}
+
+.aquarium-image-container:hover .aquarium-item-img {
+  animation: moveImage 0.5s ease-in-out;
+  -webkit-animation: moveImage 0.5s ease-in-out;
+}
+
+.bubble {
+  display: none;
+  position: absolute;
+  width: 5rem;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+}
+
+.aquarium-image-container:hover .bubble {
+  display: inline;
+}
+
+.bubble.bubble-1 {
+  width: 17%;
+  bottom: 15%;
+  left: -15%;
+  -webkit-animation-name: bubble1;
+  animation-name: bubble1;
+}
+
+.bubble.bubble-2 {
+  width: 15%;
+  bottom: 30%;
+  left: -30%;
+  -webkit-animation-name: bubble2;
+  animation-name: bubble2;
+}
+
+.bubble.bubble-3 {
+  width: 10%;
+  bottom: 50%;
+  left: -10%;
+  -webkit-animation-name: bubble3;
+  animation-name: bubble3;
+}
+
+.bubble.bubble-4 {
+  width: 10%;
+  bottom: 40%;
+  right: -20%;
+  -webkit-animation-name: bubble4;
+  animation-name: bubble4;
+}
+
+.bubble.bubble-5 {
+  width: 15%;
+  bottom: 20%;
+  right: -10%;
+  -webkit-animation-name: bubble5;
+  animation-name: bubble5;
+}
+
+.bubble.bubble-6 {
+  width: 10%;
+  bottom: 5%;
+  left: 0;
+  -webkit-animation-name: bubble6;
+  animation-name: bubble6;
+}
+
+.aquarium-info-container {
+  width: 50%;
+}
+
+.aquarium-item-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  border-radius: 5px;
+  border: 2px solid var(--light-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.aquarium-item-text {
+  font-size: 1.4em;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.aquarium-item-description {
+  margin: 1rem 0;
+}
+
+.aquarium-price-div {
+  display: flex;
+  padding: 0 0.5rem;
+  margin: 1rem 0;
+}
+
+.aquarium-item-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.aquarium-item-discount {
+  color: var(--attention);
+  text-decoration: line-through;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.aquarium-item .btn {
+  width: 50%;
+}
+
+.circle {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  background: radial-gradient(circle,
+      rgba(218, 230, 251, 0.658) 0%,
+      rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+  border: 3px solid rgba(218, 230, 251, 0.403);
+  z-index: 1;
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 630px) {
+  .aquarium-item {
+    flex-direction: column;
+  }
+
+  .aquarium-image-container {
+    width: 80%;
+  }
+
+  .aquarium-item-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    rotate: 0deg;
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+    translate: 0;
+  }
+
+  .aquarium-image-container:hover .aquarium-item-img {
+    animation: none;
+    -webkit-animation: none;
+  }
+
+  .aquarium-image-container:hover .bubble {
+    display: none;
+  }
+
+  .aquarium-info-container {
+    width: 80%;
+  }
+
+  .aquarium-item-info {
+    border-radius: 0 0 5px 5px;
+  }
+
+  .aquarium-item-text {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .aquarium-image-container {
+    width: 100%;
+  }
+
+  .aquarium-info-container {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes moveImage {
+  0% {}
+
+  50% {
+    transform: translateY(-0.5rem);
+    -webkit-transform: translateY(-0.5rem);
+    -moz-transform: translateY(-0.5rem);
+    -ms-transform: translateY(-0.5rem);
+    -o-transform: translateY(-0.5rem);
+  }
+
+  100% {}
+}
+
+@keyframes moveImage {
+  0% {}
+
+  50% {
+    transform: translateY(-0.5rem);
+    -webkit-transform: translateY(-0.5rem);
+    -moz-transform: translateY(-0.5rem);
+    -ms-transform: translateY(-0.5rem);
+    -o-transform: translateY(-0.5rem);
+  }
+
+  100% {}
+}
+
+@-webkit-keyframes bubble1 {
+  from {
+    scale: 0;
+    translate: 50% 50%;
+    bottom: 0;
+    opacity: 0.5;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes bubble1 {
+  from {
+    scale: 0;
+    translate: 50% 50%;
+    bottom: 0;
+    opacity: 0.5;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bubble2 {
+  from {
+    scale: 0;
+    translate: 0 50%;
+    opacity: 0.5;
+    bottom: 10%;
+    left: -50%;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes bubble2 {
+  from {
+    scale: 0;
+    translate: 0 50%;
+    opacity: 0.5;
+    bottom: 10%;
+    left: -50%;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bubble3 {
+  from {
+    scale: 0;
+    translate: 50% -50%;
+    opacity: 0.5;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes bubble3 {
+  from {
+    scale: 0;
+    translate: 50% -50%;
+    opacity: 0.5;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bubble4 {
+  from {
+    scale: 0;
+    translate: 100% -50%;
+    opacity: 0.5;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes bubble4 {
+  from {
+    scale: 0;
+    translate: 100% -50%;
+    opacity: 0.5;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bubble5 {
+  from {
+    scale: 0;
+    translate: -100% 0;
+    opacity: 0.5;
+    right: 40%;
+    bottom: 10%;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes bubble5 {
+  from {
+    scale: 0;
+    translate: -100% 0;
+    opacity: 0.5;
+    right: 40%;
+    bottom: 10%;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bubble6 {
+  from {
+    scale: 0;
+    translate: 50% 0;
+    opacity: 0.5;
+    left: 30%;
+    bottom: -30%;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes bubble6 {
+  from {
+    scale: 0;
+    translate: 50% 0;
+    opacity: 0.5;
+    left: 30%;
+    bottom: -30%;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}

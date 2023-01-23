@@ -1,0 +1,79 @@
+:root {
+  --primary: #fff;
+  --text-color: #0b051b;
+  --accent: #9eb4fd;
+  --background: #251d3c;
+  --special-blue: #2d1c5e;
+  --attention: rgb(234, 61, 61);
+  --important: #f9975e;
+  --light-color: #c5d1ff;
+
+  --section-padding: 0 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.section-padding {
+  padding: var(--section-padding);
+}
+
+.cart>h1,
+.assortment>h1,
+.sign-container>h1,
+.help>h1 {
+  color: var(--special-blue);
+  max-width: 90%;
+  position: absolute;
+  font-size: 10vw;
+  opacity: 0.07;
+  text-align: end;
+  right: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: var(--section-padding);
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 1050px) {
+
+  .cart>h1,
+  .assortment>h1,
+  .sign-container>h1,
+  .help>h1 {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  .section-padding {
+    padding: 0 2rem;
+  }
+
+  .cart>h1,
+  .assortment>h1,
+  .sign-container>h1,
+  .help>h1 {
+    display: none;
+  }
+}

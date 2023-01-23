@@ -1,0 +1,188 @@
+.sign-container {
+  background-color: var(--primary);
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.304);
+  background: radial-gradient(
+    104.69% 364.67% at -2.96% 49.77%,
+    rgba(255, 255, 255, 0.562) 0%,
+    rgba(240, 240, 254, 0.271) 100%
+  );
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: auto 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  position: relative;
+}
+
+.form-group label {
+  color: var(--background);
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.form-control {
+  max-width: 70%;
+  flex: 1;
+  border: none;
+  border-bottom: solid 2px var(--text-color);
+  background: transparent;
+  color: var(--text-color);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-control:active,
+.form-control:focus {
+  outline: none;
+  border: none;
+  border-bottom: solid 2px var(--accent);
+}
+
+.error-input {
+  border-bottom: 2px solid var(--attention);
+}
+
+.error-input:active,
+.error-input:focus {
+  background: rgb(255, 236, 236);
+  border-bottom: 2px solid var(--attention);
+}
+
+.error-message {
+  color: var(--attention);
+  position: absolute;
+  bottom: -1.5rem;
+  right: 0;
+}
+
+.btn-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sign-form .btn {
+  width: 40%;
+}
+
+.sign-form .btn-link {
+  color: var(--important);
+  font-size: 1.3rem;
+}
+
+.additional-link {
+  text-align: center;
+  font-size: 1.2rem;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.sign-container img {
+  position: absolute;
+  display: none;
+}
+
+.transparent-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.375);
+  display: none;
+}
+
+#anim-fish {
+  width: 20vw;
+  height: 20vh;
+  object-fit: contain;
+  left: 0;
+  bottom: 50vh;
+}
+
+#anim-tank {
+  width: 60vw;
+  height: 60vh;
+  object-fit: contain;
+  left: 0;
+  bottom: -10vh;
+}
+
+@media screen and (max-width: 1150px) {
+  .sign-form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .sign-form {
+    width: 100%;
+  }
+
+  .sign-form .btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sign-container h1 {
+    font-size: 8vw;
+  }
+
+  .sign-form {
+    gap: 3rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    align-self: flex-start;
+  }
+
+  .form-control {
+    flex: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+}

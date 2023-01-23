@@ -1,0 +1,184 @@
+.subscription-section {
+  height: 80vh;
+  background-color: var(--primary);
+  padding: 0 0 6rem;
+}
+
+.subcription-container {
+  height: 100%;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 0.5rem var(--accent);
+  position: relative;
+}
+
+.subscription-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  z-index: 2;
+}
+
+.subscription-fish {
+  width: 50%;
+  position: absolute;
+  left: -5rem;
+  bottom: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.subscription-form-container h2 {
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+.subscription-form-container p {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.subscription-waves {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23251d3c' fill-opacity='1' d='M0,224L60,208C120,192,240,160,360,133.3C480,107,600,85,720,106.7C840,128,960,192,1080,213.3C1200,235,1320,250,1390,235.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,260,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 500px auto;
+  width: 100%;
+  height: 6rem;
+}
+
+.animation-waves {
+  -webkit-animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+.subscription-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.subscription-form label {
+  flex: 1 0 60%;
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.subscription-form input {
+  background: transparent;
+  color: var(--primary);
+  border: none;
+  border-bottom: solid 1px var(--primary);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.subscription-form input::-webkit-input-placeholder {
+  color: var(--primary);
+}
+
+.subscription-form input::-moz-placeholder {
+  color: var(--primary);
+}
+
+.subscription-form input:-ms-input-placeholder {
+  color: var(--primary);
+}
+
+.subscription-form input:focus,
+.subscription-form input:active {
+  border: none;
+  outline: none;
+  border-bottom: solid 1px var(--accent);
+}
+
+.subscription-form input:focus::-webkit-input-placeholder,
+.subscription-form input:active::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.subscription-form input:focus::-moz-placeholder,
+.subscription-form input:active::-moz-placeholder {
+  opacity: 0;
+}
+
+.subscription-form input:focus:-ms-input-placeholder,
+.subscription-form input:active:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.subscription-form input:focus::-ms-input-placeholder,
+.subscription-form input:active::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.subscription-form input:focus::placeholder,
+.subscription-form input:active::placeholder {
+  opacity: 0;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: -500px;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: -500px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .subscription-waves {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23251d3c' fill-opacity='1' d='M0,224L60,208C120,192,240,160,360,133.3C480,107,600,85,720,106.7C840,128,960,192,1080,213.3C1200,235,1320,250,1390,235.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,260,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 8rem auto;
+    width: 100%;
+    height: 6rem;
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  .subscription-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .subscription-form label {
+    margin: 0;
+    width: 100%;
+  }
+
+  .subscription-form input {
+    margin: 0;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
