@@ -96,7 +96,7 @@
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 530px) {
   .footer-link-container {
     flex-direction: column;
     gap: 3rem;
@@ -105,5 +105,9 @@
   .footer-link-items {
     text-align: center;
     width: 100%;
+  }
+
+  .footer-container a {
+    font-size: 1.3rem;
   }
 }

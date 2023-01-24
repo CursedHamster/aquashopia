@@ -66,6 +66,9 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   cursor: zoom-in;
+  background: rgb(244, 243, 243);
+  background-size: 200%;
+  background-position: center;
 }
 
 .modal-product-image {
@@ -77,13 +80,16 @@
   bottom: 0;
   left: 0;
   -o-object-fit: cover;
-  object-fit: cover;
+  object-fit: contain;
   transition: all 0.2s linear;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
+  background: rgba(24, 24, 59, 0.281);
+
+  backdrop-filter: blur(10px);
 }
 
 .modal-product-image:hover {
@@ -186,6 +192,7 @@
   -o-border-radius: 5px;
   text-transform: capitalize;
   font-weight: 500;
+  cursor: default;
 }
 
 .modal-product-color-icon {
@@ -213,13 +220,13 @@
 }
 
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 950px) {
   .modal-product-info {
     flex: 0 0 50%;
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 800px) {
   .modal-product-body {
     width: 95%;
     max-height: 90vh;
@@ -234,11 +241,17 @@
   }
 
   .modal-product-image-wrap {
-    height: 90vw;
+    height: 50vw;
   }
 
   .modal-product-info {
     flex: 1 0 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .modal-product-image-wrap {
+    height: 80vw;
   }
 }
 

@@ -49,6 +49,6 @@ label {
 }
 
 .color-checkbox:checked:after {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 1rem;
+    height: 1rem;
 }

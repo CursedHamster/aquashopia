@@ -219,6 +219,13 @@ input[type="search"]::-webkit-search-cancel-button {
     place-content: start;
   }
 
+  input[type="search"] {
+    background: rgb(225, 223, 231);
+    background: radial-gradient(104.69% 364.67% at -2.96% 49.77%,
+        rgb(225, 223, 231) 0%,
+        rgba(225, 223, 231, 0.947) 100%);
+  }
+
   .search-opened .search-input {
     width: calc(100% - 3rem);
     opacity: 1;

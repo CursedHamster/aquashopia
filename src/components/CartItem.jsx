@@ -4,9 +4,23 @@ import { Context } from "../Context";
 function CartItem(props) {
   const { title, src, startingPrice, quantity, total } = props.product;
   const { removeFromCart, getPrice, changeQuantity } = useContext(Context);
+  const minMaxQuantity = { min: 1, max: 99 };
 
   const handleQuantityChange = (e) => {
-    changeQuantity(props.product, parseInt(e.target.value));
+    const newValue = e.target.value;
+    if (
+      newValue === "" ||
+      (parseInt(newValue) >= minMaxQuantity.min &&
+        parseInt(newValue) <= minMaxQuantity.max)
+    ) {
+      changeQuantity(props.product, newValue === "" ? "" : parseInt(newValue));
+    }
+  };
+
+  const handleFocusBlur = (e) => {
+    if (e.target.value === "") {
+      changeQuantity(props.product, minMaxQuantity.min);
+    }
   };
 
   return (
@@ -35,6 +49,7 @@ function CartItem(props) {
         max="99"
         value={quantity}
         onChange={handleQuantityChange}
+        onBlur={handleFocusBlur}
       />
       <p className="total">{getPrice(total)}</p>
     </div>

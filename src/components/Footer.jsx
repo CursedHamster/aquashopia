@@ -6,7 +6,7 @@ import helpData from "../assets/data/helpData";
 function Footer() {
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -90;
+    const yOffset = -65;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
 
@@ -42,13 +42,13 @@ function Footer() {
           <Link to="/about-us">
             <h2>About us</h2>
           </Link>
-          <HashLink to="/about-us#where-are-we-located">
+          <HashLink to="/about-us#where-are-we-located" scroll={scrollWithOffset}>
             Where are we located
           </HashLink>
-          <HashLink to="/about-us#how-we-were-opened">
+          <HashLink to="/about-us#how-we-were-opened" scroll={scrollWithOffset}>
             How we were opened
           </HashLink>
-          <HashLink to="/about-us#who-works-here">Who works here</HashLink>
+          <HashLink to="/about-us#who-works-here" scroll={scrollWithOffset}>Who works here</HashLink>
         </div>
         <div className="footer-link-items">
           <Link to="/help">

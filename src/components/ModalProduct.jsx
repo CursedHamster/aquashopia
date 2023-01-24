@@ -64,6 +64,7 @@ function ModalProduct(props) {
                 className={"modal-product-image-wrap " + (label ? label : "")}
                 data-category={label}
                 onClick={toggleImageOpened}
+                style={{backgroundImage: "url(" + src + ")"}}
               >
                 <img src={src} alt={title} className="modal-product-image" />
               </figure>
