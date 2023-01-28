@@ -86,7 +86,7 @@ function Footer() {
           </Link>
         </div>
         <div className="social-media-wrap">
-          <small className="website-rights">aquashopia © 2022</small>
+          <small className="website-rights">aquashopia © 2023</small>
         </div>
       </div>
     </div>
