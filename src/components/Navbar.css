@@ -1,10 +1,14 @@
 .navbar {
   background: linear-gradient(45deg, rgb(11, 5, 27) 0%, rgb(37, 30, 57) 100%);
   font-size: 1.2rem;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
+}
+
+.navbar.transparent {
+  background: transparent;
 }
 
 .navbar-container {

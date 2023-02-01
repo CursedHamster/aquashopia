@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { Context } from "../Context";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar(props) {
   const { cartProducts, getCartNumber } = useContext(Context);
   const [click, setClick] = useState(false);
   const [cartNumber, setCartNumber] = useState(0);
+  const {isTransparent} = props
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const getCartNumberString = (number) => {
@@ -19,7 +20,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className={"navbar " + (isTransparent ? "transparent" : "")}>
         <div className="navbar-container section-padding">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             aquashopia <i className="fa-solid fa-fish-fins"></i>

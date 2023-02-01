@@ -1,9 +1,9 @@
 import { Button } from "../Button";
 import "./HeroSection.css";
 
-function HeroSection() {
+function HeroSection(props) {
   return (
-    <div className="hero-container section-padding">
+    <div ref={props.heroRef} className="hero-container section-padding">
       <video src="/videos/video-3.mp4" autoPlay loop muted />
       <h1>ONLINE TROPICAL FISH STORE</h1>
       <div className="hero-btns">

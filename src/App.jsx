@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -13,13 +14,26 @@ import ErrorPage from "./components/pages/ErrorPage";
 import ScrollToTop from "./components/utils/ScrollToTop";
 
 function App() {
+  const [isTransparent, setTransparent] = useState(true);
+  const toggleTransparent = (entries) => {
+    const [entry] = entries;
+    if (entry.isIntersecting && !isTransparent) {
+      setTransparent(true);
+    } else if (!entry.isIntersecting && isTransparent) {
+      setTransparent(false);
+    }
+  };
   return (
     <>
       <Router>
         <ScrollToTop />
-        <Navbar />
+        <Navbar isTransparent={isTransparent} />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route
+            path="/"
+            exact
+            element={<Home toggleTransparent={toggleTransparent} />}
+          />
           <Route path="/assortment" exact element={<Assortment />} />
           <Route path="/assortment/:category" exact element={<Assortment />} />
           <Route path="/about-us" exact element={<AboutUs />} />
