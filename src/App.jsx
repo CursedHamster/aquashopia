@@ -14,7 +14,7 @@ import ErrorPage from "./components/pages/ErrorPage";
 import ScrollToTop from "./components/utils/ScrollToTop";
 
 function App() {
-  const [isTransparent, setTransparent] = useState(true);
+  const [isTransparent, setTransparent] = useState(false);
   const toggleTransparent = (entries) => {
     const [entry] = entries;
     if (entry.isIntersecting && !isTransparent) {
