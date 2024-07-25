@@ -121,7 +121,7 @@
 }
 
 .price {
-  color: var(--background);
+  color: var(--text-color);
   font-weight: bold;
 }
 

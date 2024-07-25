@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, createRef } from "react";
 import HeroSection from "../home/HeroSection";
+import PromoSection from "../home/PromoSection";
 import ProductsSection from "../home/ProductsSection";
 import SubscriptionSection from "../home/SubscriptionSection";
 import AquariumSection from "../home/AquariumSection";
@@ -28,6 +29,7 @@ function Home(props) {
   return (
     <>
       <HeroSection heroRef={heroRef} />
+      <PromoSection />
       <SubscriptionSection />
       <ProductsSection />
       <AquariumSection />

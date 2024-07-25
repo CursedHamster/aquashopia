@@ -4,23 +4,10 @@ import { HashLink } from "react-router-hash-link";
 import helpData from "../assets/data/helpData";
 
 function Footer() {
-  const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -65;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
-
   const helpLinks = helpData.map((entry, i) => (
     <HashLink
-      to={
-        "/help#" +
-        entry.title
-          .toLowerCase()
-          .split(" ")
-          .join("-")
-      }
+      to={"/help#" + entry.title.toLowerCase().split(" ").join("-")}
       key={"help-link-" + i}
-      scroll={scrollWithOffset}
     >
       {entry.title}
     </HashLink>
@@ -42,13 +29,13 @@ function Footer() {
           <Link to="/about-us">
             <h2>About us</h2>
           </Link>
-          <HashLink to="/about-us#where-are-we-located" scroll={scrollWithOffset}>
+          <HashLink to="/about-us#where-are-we-located">
             Where are we located
           </HashLink>
-          <HashLink to="/about-us#how-we-were-opened" scroll={scrollWithOffset}>
+          <HashLink to="/about-us#how-we-were-opened">
             How we were opened
           </HashLink>
-          <HashLink to="/about-us#who-works-here" scroll={scrollWithOffset}>Who works here</HashLink>
+          <HashLink to="/about-us#who-works-here">Who works here</HashLink>
         </div>
         <div className="footer-link-items">
           <Link to="/help">

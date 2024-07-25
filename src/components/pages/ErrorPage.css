@@ -1,30 +1,40 @@
 .error-page {
-  padding-top: 2rem;
+  padding-top: 6rem;
   padding-bottom: 2rem;
   min-height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .container-404 {
   position: relative;
+  width: 100%;
 }
 
 .text-404 {
+  /* width: fit-content;
+  margin: 0 auto;
   font-size: 15rem;
   font-weight: bold;
   background: rgb(233, 175, 142);
   background: radial-gradient(circle,
       rgba(249, 151, 94, 1) 0%,
       rgba(158, 180, 253, 1) 100%);
-  background-position: 100% 0%;
-  background-size: 200% 200%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  opacity: 0.2;
+  opacity: 0.3; */
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: bold;
+  color: var(--special-blue);
+  font-size: 15rem;
+  opacity: 0.07;
+  line-height: 1;
+  text-transform: uppercase;
+  word-wrap: break-word;
 }
 
 .error-404 {
@@ -34,7 +44,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 4rem;
+  font-size: 6rem;
   text-transform: uppercase;
   color: var(--special-blue);
 }

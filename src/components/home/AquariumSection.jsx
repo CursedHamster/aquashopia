@@ -6,9 +6,8 @@ import useToggle from "../utils/useToggle";
 import { Context } from "../../Context";
 
 function AquariumSection() {
-  const { products, getSpecialProduct, getPrice, addToCart } = useContext(
-    Context
-  );
+  const { products, getSpecialProduct, getPrice, addToCart } =
+    useContext(Context);
   const [product, setProduct] = useState({});
   const [modalOpened, toggleModal] = useToggle(false);
 
@@ -29,7 +28,10 @@ function AquariumSection() {
   return (
     <>
       <div className="aquarium-container section-padding">
-        <h2 className="aquarium-title">YOU MAY NEED THIS</h2>
+        <div className="aquarium-waves aquarium-waves-1"></div>
+        <div className="aquarium-waves aquarium-waves-2"></div>
+        <div className="aquarium-waves aquarium-waves-3"></div>
+        <h2 className="aquarium-title">YOU MAY NEED IT</h2>
         <div className="aquarium-item">
           <div className="aquarium-image-container" onClick={toggleModal}>
             <img
@@ -37,7 +39,7 @@ function AquariumSection() {
               alt={product.title}
               className="aquarium-item-img"
             />
-            <img
+            {/* <img
               className="bubble bubble-1"
               src="https://www.freepnglogos.com/uploads/bubbles/transparent-bubble-clip-art-creation-creatures-4.png"
               alt="Bubble 1"
@@ -66,37 +68,31 @@ function AquariumSection() {
               className="bubble bubble-6"
               src="https://www.freepnglogos.com/uploads/bubbles/transparent-bubble-clip-art-creation-creatures-4.png"
               alt="Bubble 1"
-            />
+            /> */}
           </div>
-          <div className="aquarium-info-container">
-            <div className="aquarium-item-info">
-              <h5 className="aquarium-item-text" onClick={toggleModal}>
-                {product.title}
-              </h5>
-              {product.description && (
-                <p className="aquarium-item-description">
-                  {product.description}
+          <div className="aquarium-info">
+            <h5 className="aquarium-item-text" onClick={toggleModal}>
+              {product.title}
+            </h5>
+            {product.description && (
+              <p className="aquarium-item-description">{product.description}</p>
+            )}
+            <div className="aquarium-price-div">
+              <p className="aquarium-item-price">
+                {getPrice(product.startingPrice, product.endingPrice)}
+              </p>
+              {product.discount > 0 && (
+                <p className="aquarium-item-discount">
+                  {getPrice(
+                    product.prediscountStartingPrice,
+                    product.prediscountEndingPrice
+                  )}
                 </p>
               )}
-              <div className="aquarium-item-bottom">
-                <div className="aquarium-price-div">
-                  <p className="aquarium-item-price">
-                    {getPrice(product.startingPrice, product.endingPrice)}
-                  </p>
-                  {product.discount > 0 && (
-                    <p className="aquarium-item-discount">
-                      {getPrice(
-                        product.prediscountStartingPrice,
-                        product.prediscountEndingPrice
-                      )}
-                    </p>
-                  )}
-                </div>
-                <Button buttonStyle="btn--accent" onClick={handleButtonClick}>
-                  BUY NOW
-                </Button>
-              </div>
             </div>
+            <Button buttonStyle="btn--accent" onClick={handleButtonClick}>
+              BUY NOW
+            </Button>
           </div>
           <ModalProduct
             product={product}
@@ -105,34 +101,6 @@ function AquariumSection() {
             getPrice={getPrice}
           />
         </div>
-        <span
-          className="circle"
-          style={{
-            top: "-5rem",
-            left: "-5rem",
-          }}
-        ></span>
-        <span
-          className="circle"
-          style={{
-            top: "-13rem",
-            left: "8rem",
-          }}
-        ></span>
-        <span
-          className="circle"
-          style={{
-            bottom: "-8rem",
-            right: "2rem",
-          }}
-        ></span>
-        <span
-          className="circle"
-          style={{
-            bottom: "2rem",
-            right: "30rem",
-          }}
-        ></span>
       </div>
     </>
   );

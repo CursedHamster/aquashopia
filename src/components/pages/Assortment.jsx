@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import gsap from "gsap";
+import Flip from "gsap/Flip";
 import Cards from "../Cards";
 import DropdownFilter from "../filter/DropdownFilter";
 import useToggle from "../utils/useToggle";
@@ -8,17 +10,12 @@ import productFilters from "../../assets/data/productFilters";
 import "./Assortment.css";
 
 function Assortment(props) {
-  const {
-    reversedProducts,
-    getPrice,
-    getDiscountedPrice,
-    productCategories,
-  } = useContext(Context);
+  const { reversedProducts, getPrice, getDiscountedPrice, productCategories } =
+    useContext(Context);
 
   const navigate = useNavigate();
   const { category } = useParams();
 
-  const [filterOpened, toggleFilter] = useToggle(null);
   const [searchOpened, toggleSearch] = useToggle(null);
 
   const [sortByPriceInc, toggleSortByPriceInc] = useToggle(true);
@@ -60,9 +57,26 @@ function Assortment(props) {
   };
 
   useEffect(() => {
+    gsap?.registerPlugin(Flip);
     if (category === undefined || !productCategories.includes(category)) {
       navigate("/assortment/all");
     }
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(filterOpened, savedState)
+  //   if (filterOpened !== null) {
+  //     if (savedState) {
+  //       console.log(savedState)
+  //       Flip.from(savedState, {
+  //         duration: 0.5,
+  //         onComplete: () => console.log("meow"),
+  //       });
+  //     }
+  //   }
+  // }, [filterOpened]);
+
+  useEffect(() => {
     setSortedProducts(reversedProducts);
     setFilteredProducts(reversedProducts);
   }, [reversedProducts]);
@@ -72,7 +86,11 @@ function Assortment(props) {
   }, [sortedProducts]);
 
   useEffect(() => {
-    filter(sortedProducts);
+    if (category === undefined || !productCategories.includes(category)) {
+      navigate("/assortment/all");
+    } else {
+      filter(sortedProducts);
+    }
   }, [category]);
 
   useEffect(() => {
@@ -102,7 +120,7 @@ function Assortment(props) {
         let checkColors = true;
 
         if (filterObjects.colors && filterObjects.colors.length > 0) {
-          checkColors = filterObjects.colors.some((color) =>
+          checkColors = filterObjects?.colors?.every((color) =>
             product.colors.includes(color)
           );
         }
@@ -159,19 +177,36 @@ function Assortment(props) {
     );
   }
 
+  function animateStateChange() {
+    const target = ".filter-block";
+    const savedState = Flip?.getState(target, {
+      props: "opacity,padding",
+      simple: true,
+    });
+    document
+      ?.querySelector(target)
+      ?.classList?.toggle("filter-opened");
+    document
+      ?.querySelector(".filter-group")
+      ?.classList?.toggle("filter-group-opened");
+    Flip?.from(savedState, { ease: "none", prune: true, duration: 0.5 });
+  }
+
   return (
     <div className="assortment section-padding">
       <h1>Assortment</h1>
       <div className="category-div">{categories}</div>
       <div className="filter-div">
-        <div className="filter-group" onClick={toggleFilter}>
+        <div className="filter-group" onClick={animateStateChange}>
           <i className="fas fa-filter"></i>
           <h2>Filter</h2>
-          <i
+          <i className="fas fa-chevron-left"></i>
+          <i className="fas fa-chevron-right"></i>
+          {/* <i
             className={
               "fas " + (filterOpened ? "fa-chevron-left" : "fa-chevron-right")
             }
-          ></i>
+          ></i> */}
         </div>
         <form
           className={
@@ -199,12 +234,13 @@ function Assortment(props) {
       <div className="assortment-cards">
         <div
           className={
-            "filter-block " +
-            (filterOpened
-              ? "filter-opened"
-              : filterOpened !== null
-              ? "filter-closed"
-              : "")
+            "filter-block"
+            // +
+            // (filterOpened
+            //   ? "filter-opened"
+            //   : filterOpened !== null
+            //   ? "filter-closed"
+            //   : "")
           }
         >
           <div className="filter-sort-group" onClick={sortByPrice}>

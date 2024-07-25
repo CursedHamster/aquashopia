@@ -25,8 +25,9 @@ function ModalProduct(props) {
   const colorsData = productFilters[1].values;
   const colorObjects = colors
     ? colors.map((color) => {
-        const colorCode = colorsData.find((obj) => obj.value === color)
-          .colorCode;
+        const colorCode = colorsData.find(
+          (obj) => obj.value === color
+        ).colorCode;
         return (
           <div key={color} className="modal-product-color">
             <div
@@ -64,8 +65,12 @@ function ModalProduct(props) {
                 className={"modal-product-image-wrap " + (label ? label : "")}
                 data-category={label}
                 onClick={toggleImageOpened}
-                style={{backgroundImage: "url(" + src + ")"}}
               >
+                <img
+                  src={src}
+                  alt={title}
+                  className="modal-product-image-background"
+                />
                 <img src={src} alt={title} className="modal-product-image" />
               </figure>
               <Button buttonStyle="btn--accent" onClick={handleButtonClick}>

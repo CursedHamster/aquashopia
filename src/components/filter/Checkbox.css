@@ -1,5 +1,6 @@
-label {
+.color-checkbox-container {
     display: flex;
+    width: fit-content;
     align-items: center;
     gap: 1rem;
     text-transform: capitalize;
@@ -19,7 +20,7 @@ label {
     width: 1.5rem;
     height: 1.5rem;
     background: transparent;
-    border: 2px solid var(--background);
+    border: 2px solid var(--text-color);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -30,15 +31,16 @@ label {
     justify-content: center;
     align-items: center;
 
-    --checkbox-background: rgb(231, 231, 231);
+    /* --checkbox-background: rgb(231, 231, 231); */
 }
 
 .color-checkbox::after {
+    box-sizing: border-box;
     content: "";
     width: 0.6rem;
     height: 0.6rem;
     background: var(--checkbox-background);
-    border: 1px solid var(--background);
+    border: 1px solid var(--text-color);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     -webkit-border-radius: 50%;

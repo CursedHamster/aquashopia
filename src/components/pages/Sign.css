@@ -1,5 +1,5 @@
 .sign-container {
-  background-color: var(--primary);
+  background: var(--primary);
   min-height: 95vh;
   width: 100%;
   display: flex;
@@ -17,21 +17,22 @@
   flex-direction: column;
   gap: 2rem;
   width: 40%;
-  background: rgba(255, 255, 255, 0.304);
+  /* background: rgba(255, 255, 255, 0.304);
   background: radial-gradient(
     104.69% 364.67% at -2.96% 49.77%,
     rgba(255, 255, 255, 0.562) 0%,
     rgba(240, 240, 254, 0.271) 100%
-  );
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  border-radius: 5px;
-  padding: 1rem;
+  ); */
+  /* background: var(--primary); */
+  /* -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px); */
+  /* border-radius: 5px; */
+  /* padding: 2rem; */
   margin: auto 0;
-  -webkit-border-radius: 5px;
+  /* -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -o-border-radius: 5px; */
 }
 
 .form-group {

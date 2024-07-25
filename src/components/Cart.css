@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: 6rem;
   padding-bottom: 3rem;
   position: relative;
   margin-top: 3rem;
@@ -69,6 +69,7 @@
   overflow: hidden;
   text-align: start;
   color: var(--special-blue);
+  font-weight: 400;
 }
 
 .image-and-remove {
@@ -104,6 +105,10 @@
   font-weight: 500;
   font-size: 1.1rem;
   word-wrap: break-word;
+}
+
+.cart-items-block .total {
+  font-weight: 600;
 }
 
 .cart-items-block .quantity {
@@ -171,7 +176,7 @@
 
 .ring .fish {
   width: fit-content;
-  color: var(--accent);
+  color: var(--light-color);
   font-size: 4rem;
   position: absolute;
   top: -2rem;

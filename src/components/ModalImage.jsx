@@ -6,9 +6,9 @@ function ModalImage(props) {
   return (
     <>
       {imageOpened && (
-        <div className="modal-image">
+        <div className="modal-image" onClick={toggleImageOpened}>
           <img src={src} alt={alt} />
-          <i className="fas fa-times" onClick={toggleImageOpened}></i>
+          <i className="fas fa-times"></i>
         </div>
       )}
     </>

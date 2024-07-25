@@ -20,7 +20,7 @@ function PriceRange(props) {
   function handleSPriceInputChange(e) {
     e.preventDefault();
 
-    setRangeInputs((prev) => ({
+    setRangeValues((prev) => ({
       ...prev,
       starting: e.target.value,
     }));
@@ -29,7 +29,7 @@ function PriceRange(props) {
   function handleEPriceInputChange(e) {
     e.preventDefault();
 
-    setRangeInputs((prev) => ({
+    setRangeValues((prev) => ({
       ...prev,
       ending: e.target.value,
     }));

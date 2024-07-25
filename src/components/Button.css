@@ -9,6 +9,7 @@
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+    overflow: hidden;
 }
 
 .btn--primary {
@@ -21,7 +22,7 @@
     background: var(--accent);
     color: var(--text-color);
     text-transform: uppercase;
-    transition: ease-out 0.5s;
+    transition: ease-out 0.2s;
     font-weight: bold;
 }
 
@@ -29,7 +30,7 @@
     background: var(--background);
     color: var(--primary);
     text-transform: uppercase;
-    transition: ease-out 0.5s;
+    transition: ease-out 0.2s;
 }
 
 .btn--dark:hover {
@@ -42,11 +43,36 @@
 }
 
 .btn--outline {
+    position: relative;
     background-color: transparent;
     color: var(--primary);
     border: 1px solid var(--primary);
-    box-shadow: inset 0 0 0 0 var(--primary);
-    transition: ease-in-out 0.5s;
+    /* box-shadow: inset 0 0 0 0 var(--primary); */
+    transition: ease-in-out 0.3s;
+}
+
+.btn--outline::before {
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: ease-in-out 0.3s;
+}
+
+.btn--outline::after {
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    z-index: -1;
+    transition: ease-in-out 0.3s;
 }
 
 .btn--transparent {
@@ -65,13 +91,25 @@
 }
 
 .btn--outline:hover {
+    color: var(--text-color);
+}
+
+.btn--outline:hover::before {
+    left: 0%;
+}
+
+.btn--outline:hover::after {
+    right: 0%;
+}
+
+/* .btn--outline:hover {
     box-shadow: inset 5rem 0 0 0 var(--primary), inset -5rem 0 0 0 var(--primary);
     color: var(--text-color);
 }
 
 .btn--outline:hover.btn--large {
     box-shadow: inset 15rem 0 0 0 var(--primary), inset -15rem 0 0 0 var(--primary);
-}
+} */
 
 .btn--primary:active,
 .btn--primary--right:active {
@@ -98,8 +136,8 @@
         font-size: 1rem;
     }
 
-    .btn--outline:hover,
+    /* .btn--outline:hover,
     .btn--outline--left:hover {
         box-shadow: inset 10rem 0 0 0 var(--primary), inset -10rem 0 0 0 var(--primary);
-    }
+    } */
 }

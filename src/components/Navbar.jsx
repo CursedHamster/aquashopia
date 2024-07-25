@@ -78,9 +78,10 @@ function Navbar(props) {
             <li className="nav-item">
               <Link
                 to="/cart"
-                className="nav-links cart-icon"
+                className="nav-links cart-icon nav-cart-link"
                 onClick={closeMobileMenu}
               >
+                <p className="nav-cart-text">Cart</p>
                 <i className="fa-solid fa-shopping-cart" title="Shopping cart">
                   <span className="cart-number">
                     {getCartNumberString(cartNumber)}

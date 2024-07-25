@@ -26,8 +26,8 @@ function App() {
   return (
     <>
       <Router>
-        <ScrollToTop />
         <Navbar isTransparent={isTransparent} />
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"

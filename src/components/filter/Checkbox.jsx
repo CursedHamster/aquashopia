@@ -11,7 +11,7 @@ function Checkbox(props) {
   }
 
   return (
-    <label className={checked ? "checked" : ""}>
+    <label className={`color-checkbox-container ${checked ? "checked" : ""}`}>
       <input
         type="checkbox"
         className={val.colorCode ? "color-checkbox" : "normal-checkbox"}

@@ -2,11 +2,11 @@
   --primary: #fff;
   --text-color: #0b051b;
   --accent: #9eb4fd;
-  --background: #251d3c;
+  --background: #3f2684;
   --special-blue: #2d1c5e;
   --attention: rgb(234, 61, 61);
   --important: #f9975e;
-  --light-color: #c5d1ff;
+  --light-color: #e6e9f5;
 
   --section-padding: 0 3rem;
 }
@@ -60,8 +60,6 @@ body {
 }
 
 @media screen and (max-width: 750px) {
-
-  html,
   body {
     font-size: 14px;
   }
