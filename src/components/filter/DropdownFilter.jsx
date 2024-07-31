@@ -3,12 +3,12 @@ import gsap from "gsap";
 import Flip from "gsap/Flip";
 import Checkbox from "./Checkbox";
 import PriceRange from "./PriceRange";
-import useToggle from "../utils/useToggle";
+// import useToggle from "../utils/useToggle";
 import "./DropdownFilter.css";
 
 function DropdownFilter(props) {
   const dropdownRef = useRef(null);
-  const [dropdownOpened, toggleDropdown] = useToggle("true");
+  // const [dropdownOpened, toggleDropdown] = useToggle("true");
   const { type, title, values } = props.filter;
   const [rangeValues, setRangeValues] = useState(
     values.endingPrice

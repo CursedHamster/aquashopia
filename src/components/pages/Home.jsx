@@ -15,7 +15,7 @@ function Home(props) {
   };
 
   useEffect(() => {
-    console.log(heroRef);
+    // console.log(heroRef);
     const observer = new IntersectionObserver(toggleTransparent, options);
     if (heroRef.current) observer.observe(heroRef.current);
 
