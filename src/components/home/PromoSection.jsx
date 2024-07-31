@@ -2,7 +2,7 @@ import "./PromoSection.css";
 
 function PromoSection() {
   return (
-    <section className="promos">
+    <section className="promos section-padding">
       <div className="promo">
         <i className="fas fa-fish"></i>
         <p>Always healthy fish</p>
