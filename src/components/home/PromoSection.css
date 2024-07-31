@@ -11,7 +11,8 @@
       rgba(249, 151, 94, 0.273) 0%,
       rgba(158, 180, 253, 0.342) 100%
     ); */
-    padding: 5rem 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     color: var(--primary);
 }
 
