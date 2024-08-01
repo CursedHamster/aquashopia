@@ -90,9 +90,10 @@ export default function SignIn() {
               name="sign-up-country"
               id="sign_up_country"
             >
-              <option>Great Britain</option>
-              <option>USA</option>
               <option>Ukraine</option>
+              <option>UK United Kingdom</option>
+              <option>US United States</option>
+              <option>Canada</option>
             </select>
           </div>
           <div className="form-group">
@@ -102,7 +103,7 @@ export default function SignIn() {
               type="text"
               name="sign-up-city"
               id="sign_up_city"
-              placeholder="London"
+              placeholder="Kyiv"
               onChange={handleCityChange}
             />
             {errors.city && <p className="error-message">{errors.city}</p>}
