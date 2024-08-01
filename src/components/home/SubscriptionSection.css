@@ -39,6 +39,7 @@
 .subscription-form-container h2 {
   color: var(--primary);
   font-size: 4em;
+  line-height: 1;
 }
 
 .subscription-form-container p {
@@ -167,6 +168,10 @@
     -webkit-animation: none;
     animation: none;
     display: none;
+  }
+
+  .subscription-form-container {
+    gap: 2rem;
   }
 
   .subscription-form {

@@ -6,8 +6,9 @@
 
 .products-section>h2 {
   font-size: 4em;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   text-align: center;
+  line-height: 1;
 }
 
 .products-section-see-more {
